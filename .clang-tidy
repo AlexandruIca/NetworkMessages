@@ -1,0 +1,12 @@
+---
+Checks: >
+    *,
+    -fuchsia-*,
+    -google-*,
+    -zircon-*,
+    -abseil-*,
+    -llvm-*,
+    -cppcoreguidelines-macro-usage,
+WarningsAsErrors: '1'
+HeaderFilterRegex: ''
+FormatStyle: none

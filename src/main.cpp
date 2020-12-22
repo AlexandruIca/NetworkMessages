@@ -38,7 +38,10 @@ auto main([[maybe_unused]] int argc, [[maybe_unused]] char* argv[]) noexcept -> 
     asio::error_code ec;
     asio::io_context context;
 
-    asio::io_context::work idle_work{ context };
+    using executor_t = decltype(context.get_executor());
+
+    // prevent `context.run()` to return when there is no more work to do
+    asio::executor_work_guard<executor_t> idle_work{ context.get_executor() };
     std::thread context_thread{ [&context]() { context.run(); } };
 
     constexpr int port = 80;

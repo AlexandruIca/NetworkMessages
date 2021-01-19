@@ -35,3 +35,10 @@ if(BUILD_TESTS)
   enable_testing()
   add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests/)
 endif()
+
+option(BUILD_EXAMPLES "Build project examples" OFF)
+
+if(BUILD_EXAMPLES)
+  enable_testing()
+  add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/examples/)
+endif()

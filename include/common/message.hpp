@@ -16,7 +16,7 @@ struct message_header
 {
 public:
     T id{};
-    std::uint64_t size{ 0 };
+    std::uint64_t size{ sizeof(message_header) };
 };
 
 template<typename T>

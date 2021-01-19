@@ -1,8 +1,6 @@
-function(build_test TEST_NAME)
-  add_executable(${TEST_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/${TEST_NAME}.cpp)
-  target_link_libraries(${TEST_NAME} PRIVATE project::options project::warnings asio::asio spdlog::spdlog net::common)
-  add_test(${TEST_NAME} ${TEST_NAME})
-endfunction()
+add_executable(project_tests ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
 
-build_test(basic_version)
-build_test(message_test)
+target_include_directories(project_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(project_tests PRIVATE doctest::doctest asio::asio spdlog::spdlog net::common)
+
+add_test(project_tests project_tests)

@@ -26,6 +26,7 @@ set(CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR} ${CMAKE_PREFIX_PATH})
 
 find_package(asio REQUIRED)
 find_package(spdlog REQUIRED)
+find_package(doctest REQUIRED)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/)
 

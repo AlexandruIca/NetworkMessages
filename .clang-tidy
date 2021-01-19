@@ -8,6 +8,7 @@ Checks: >
     -llvm-*,
     -cppcoreguidelines-macro-usage,
     -cert-err58-cpp,
+    -misc-non-private-member-variables-in-classes,
 WarningsAsErrors: '1'
 HeaderFilterRegex: ''
 FormatStyle: none

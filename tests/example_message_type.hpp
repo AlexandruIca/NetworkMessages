@@ -1,5 +1,6 @@
 #ifndef NET_TEST_MSG_TYPE_HPP
 #define NET_TEST_MSG_TYPE_HPP
+#pragma once
 
 namespace test {
 

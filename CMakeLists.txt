@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.16)
 
 project(asio_message_passing LANGUAGES CXX)
 
@@ -8,7 +8,7 @@ include(cmake/PreventSourceBuilds.cmake)
 add_library(project_options INTERFACE)
 add_library(project::options ALIAS project_options)
 
-target_compile_features(project_options INTERFACE cxx_std_17)
+target_compile_features(project_options INTERFACE cxx_std_20)
 
 add_library(project_warnings INTERFACE)
 add_library(project::warnings ALIAS project_warnings)

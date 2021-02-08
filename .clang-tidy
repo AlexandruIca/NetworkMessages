@@ -10,6 +10,7 @@ Checks: >
     -cert-err58-cpp,
     -misc-non-private-member-variables-in-classes,
     -hicpp-no-assembler,
+    -cppcoreguidelines-non-private-member-variables-in-classes,
 WarningsAsErrors: '1'
 HeaderFilterRegex: ''
 FormatStyle: none

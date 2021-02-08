@@ -1,7 +1,3 @@
-#ifndef NET_TEST_MESSAGE_HPP
-#define NET_TEST_MESSAGE_HPP
-#pragma once
-
 #include <doctest/doctest.h>
 
 #include "common/message.hpp"
@@ -54,5 +50,3 @@ TEST_CASE("[net::message<T>] Make sure the values are set/read accordingly")
     REQUIRE(tmp_int == 0);
     REQUIRE(tmp_bool == false);
 }
-
-#endif // !NET_TEST_MESSAGE_HPP

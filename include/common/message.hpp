@@ -6,6 +6,7 @@
 
 #include <cstdint>
 #include <cstring>
+#include <memory>
 #include <type_traits>
 #include <vector>
 
@@ -30,6 +31,16 @@ public:
     {
         return sizeof(message_header<T>) + body.size();
     }
+};
+
+template<typename T>
+class connection;
+
+template<typename T>
+struct owned_message
+{
+    std::shared_ptr<connection<T>> remote = nullptr;
+    message<T> msg;
 };
 
 namespace operators {
@@ -79,6 +90,22 @@ struct fmt::formatter<net::message<T>>
     auto format(net::message<T> const& msg, FormatContext& ctx)
     {
         return fmt::format_to(ctx.out(), "ID: {} Size: {}", static_cast<int>(msg.header.id), msg.header.size);
+    }
+};
+
+template<typename T>
+struct fmt::formatter<net::owned_message<T>>
+{
+    template<typename ParseContext>
+    constexpr auto parse(ParseContext& ctx)
+    {
+        return ctx.begin();
+    }
+
+    template<typename FormatContext>
+    auto format(net::owned_message<T> const& msg, FormatContext& ctx)
+    {
+        return fmt::format_to(ctx.out(), "{}", msg.msg);
     }
 };
 

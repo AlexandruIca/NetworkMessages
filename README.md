@@ -26,4 +26,4 @@ mv compile_commands.json .. # Probably useful for IDEs/language servers
 
 cmake --build . # Actually build the project
 ```
-All dependencies are specified in [scrips/manifest.scm](./scripts/manifest.scm), you can use that to create a GUIX environment.
+All dependencies are specified in [scrips/manifest.scm](./scripts/manifest.scm), you can use that to create a GUIX environment, the only additional thing you would have to do is `pip install conan`.
